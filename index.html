@@ -7,35 +7,9 @@
     <title>Brysite</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .navbar {
-            background-color: #333;
-            overflow: hidden;
-        }
-
-        .navbar a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-        }
-
-        .navbar a:hover {
-            background-color: #575757;
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        h1 {
-            color: #333;
+            margin: 50px;
+            padding: 10px;
+            background-color: #FFFFDD;
         }
 
         .image-container {
@@ -68,27 +42,70 @@
             opacity: 1;
             transition: opacity 0.5s, visibility 0.5s;
         }
+        #z125Image {
+            border-radius: 10px;
+            border-color: #555;
+            border-style: double;
+            border-width: 5px;
+        }
+        #z125Caption {
+            color: #000;
+            border-radius: 10px;
+            text-shadow: 0px 0px 10px #111;
+        }
     </style>
 </head>
 
 <body>
 
-    <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="pages/hobbies.html">Hobbies</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </div>
-
     <div class="container">
         <h1>Welcome to the Brysite</h1>
+        <figure style="float: right; margin-right: 10px; text-align: center;">
+            <img id="z125Image" src="resources/02D36884-190D-4CD2-B23B-68238A5731B1_1_105_c.jpeg" alt="Bry on z125"
+                style="width: 200px;">
+            <figcaption id="z125Caption">My z125, Kermit</figcaption>
+        </figure>
+
         <p>I'm Bry. I go by bry400. Bry for my name and 400 cause I own
             <span class="image-container">
-                <a href="#">this</a>
-                <img src="resources/89C44326-C04C-4F18-B2B7-C55844805157_4_5005_c.jpeg" alt="Bike Image">
+                <a href="#"><b>this</b></a>
+                <img src="resources/89C44326-C04C-4F18-B2B7-C55844805157_4_5005_c.jpeg" alt="Ninja 400">
             </span> bike.
+            You can see my <a href="#hobbies" style="text-decoration: none;"><b>hobbies</b></a>, if you're interested.
         </p>
     </div>
+
+    <div>
+        <div id="hobbies">
+            <h3>My Hobbies</h3>
+            <ul>
+                <li>Motorcycling
+                    <p>I got into motorcycling summer of 2024. I wanted to get a motorcycle for my birthday, but my dad
+                        warned me against it. However, midway through the summer, my mom encouraged me to just go out
+                        and get a bike and learn.<br>They bought me a Kawasaki z125 for my first ever bike, and I
+                        learned quickly!
+                        Then I realized I need more power, which is when I decided to buy my Ninja 400. <br><br>I
+                        <b>LOVE</b> my Ninja.
+                    </p>
+                </li>
+                <li>Geometry Dash
+                    <p>I made a mod for Geometry Dash! It runs through the Geode modloader.</p>
+                </li>
+                <li>Programming
+                    <p>I'm studying computer science in college. I hope to become a cybersecurity expert and I plan on
+                        going to grad school to achieve that.
+                        Though I constantly struggle with the feeling that everyone else is better than me, especially
+                        in this field. I wonder how I can get past that feeling.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div id="Contat">
+            <h4>Contact</h4>
+            <p>If you want to get in contact with me, you can add me on discord. My username is kazidough.
+                <br> Feel free to check out my <a href="https://github.com/kazido">Github</a> page!
+            </p>
+        </div>
 
 </body>
 
