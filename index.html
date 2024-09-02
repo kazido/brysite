@@ -6,10 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brysite</title>
     <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+            /* Width of the scrollbar */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #999;
+            /* Color of the scroll thumb */
+            border-radius: 6px;
+            /* Rounded corners for the thumb */
+            border: 2px solid transparent;
+            /* Optional: Adds spacing */
+        }
+
+        ::-webkit-scrollbar-track {
+            background-image: var(--bg-gradient);
+            /* Color of the scrollbar track */
+        }
+
         body {
+            background-image: var(--bg-gradient);
             margin: 50px;
             padding: 10px;
-            background-color: #FFFFDD;
+            background-attachment: fixed;
+            background-size: cover;
+            height: 100vh;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+        }
+
+        body.light-mode {
+            color: black;
+            --link-color: #282849;
+            --bg-gradient: linear-gradient(45deg, #CCA, #ACC);
+        }
+
+        body.dark-mode {
+            color: #FFFFDD;
+            --link-color: powderblue;
+            --bg-gradient: linear-gradient(45deg, #223, #322);
+        }
+
+        a {
+            color: var(--link-color);
+            font-family: monospace;
+            font-size: large;
         }
 
         .image-container {
@@ -43,34 +84,62 @@
             transition: opacity 0.5s, visibility 0.5s;
         }
 
+        #lightdarktoggle {
+            height: 35px;
+            width: 50px;
+            padding-top: 5px;
+            border-radius: 20px;
+            border-style: outset;
+            cursor: pointer;
+            float: right;
+        }
+
+        #buttonImage {
+            width: 20px;
+            height: 20px;
+        }
+
         #z125Image {
             border-radius: 10px;
-            border-color: #555;
             border-style: double;
             border-width: 5px;
         }
 
-        #z125Caption {
-            color: #000;
+        #bikeCaption {
             border-radius: 10px;
             text-shadow: 0px 0px 10px #111;
         }
     </style>
 </head>
 
-<body>
+<body class="light-mode">
 
     <div class="container">
+        <button id="lightdarktoggle">
+            <img id="buttonImage" src="resources/sun.png">
+        </button>
+        <script>
+            const button = document.getElementById('lightdarktoggle');
+            const body = document.body;
+            const icon = button.querySelector('img')
+
+            button.addEventListener('click', function () {
+                body.classList.toggle('dark-mode');
+                body.classList.toggle('light-mode');
+                icon.src = body.classList.contains('dark-mode') ? 'resources/brightness.png' : 'resources/sun.png';
+            });
+        </script>
         <h1>Welcome to the Brysite</h1>
         <figure style="float: right; margin-right: 10px; text-align: center;">
             <img id="z125Image" src="resources/02D36884-190D-4CD2-B23B-68238A5731B1_1_105_c.jpeg" alt="Bry on z125"
                 style="width: 200px;">
-            <figcaption id="z125Caption">My z125, Kermit</figcaption>
+            <figcaption id="bikeCaption">My z125, Kermit</figcaption>
         </figure>
+
 
         <p>I'm Bry. I go by bry400. Bry for my name and 400 cause I own
             <span class="image-container">
-                <a href="#"><b>this</b></a>
+                <a><b>this</b></a>
                 <img src="resources/89C44326-C04C-4F18-B2B7-C55844805157_4_5005_c.jpeg" alt="Ninja 400">
             </span> bike.
             You can see my <a href="#hobbies" style="text-decoration: none;"><b>hobbies</b></a>, if you're interested.
@@ -114,7 +183,8 @@
         <div id="Contat">
             <h4>Contact</h4>
             <p>If you want to get in contact with me, you can add me on discord. My username is kazidough.
-                <br> Feel free to check out my <a href="https://github.com/kazido">Github</a> page!
+                <br> Feel free to check out my <a href="https://github.com/kazido"
+                    style="text-decoration: none;"><b>Github</b></a> page!
             </p>
         </div>
 
