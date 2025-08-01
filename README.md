@@ -1,3 +1,3 @@
 # brysite
 My website. Appropriately named Brysite.
-Can be found [here](www.bry400.com)!
+Can be found [here](https://bry400.com)!
