@@ -1,0 +1,31 @@
+name: Update media list
+
+# Runs whenever files are added under media/ or downloads/ and rebuilds media.json.
+on:
+  push:
+    branches: [main]
+    paths: ["media/**", "downloads/**"]
+
+# One run at a time; if more uploads arrive meanwhile, the newest run wins.
+concurrency:
+  group: update-media
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/update-media.mjs
+      - name: Commit media.json if it changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add media.json
+          git diff --staged --quiet || (git commit -m "Update media list" && git push)

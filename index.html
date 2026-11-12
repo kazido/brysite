@@ -1,191 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="midnight">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brysite</title>
-    <style>
-        ::-webkit-scrollbar {
-            width: 8px;
-            /* Width of the scrollbar */
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background-color: #999;
-            /* Color of the scroll thumb */
-            border-radius: 6px;
-            /* Rounded corners for the thumb */
-            border: 2px solid transparent;
-            /* Optional: Adds spacing */
-        }
-
-        ::-webkit-scrollbar-track {
-            background-image: var(--bg-gradient);
-            /* Color of the scrollbar track */
-        }
-
-        body {
-            background-image: var(--bg-gradient);
-            margin: 50px;
-            padding: 10px;
-            background-attachment: fixed;
-            background-size: cover;
-            height: 100vh;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-        }
-
-        body.light-mode {
-            color: black;
-            --link-color: #282849;
-            --bg-gradient: linear-gradient(45deg, #CCA, #ACC);
-        }
-
-        body.dark-mode {
-            color: #FFFFDD;
-            --link-color: powderblue;
-            --bg-gradient: linear-gradient(45deg, #223, #322);
-        }
-
-        a {
-            color: var(--link-color);
-            font-family: monospace;
-            font-size: large;
-        }
-
-        .image-container {
-            position: relative;
-            display: inline-block;
-        }
-
-        .image-container img {
-            visibility: hidden;
-            opacity: 0;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            margin-top: 50px;
-            max-width: 400px;
-            /* Adjust based on your image size */
-            border: 2px solid #000;
-            background-color: #fff;
-            transition: opacity 0.5s, visibility 0.5s;
-        }
-
-        .image-container a {
-            text-decoration: none;
-            color: #007BFF;
-            cursor: pointer;
-        }
-
-        .image-container a:hover+img {
-            visibility: visible;
-            opacity: 1;
-            transition: opacity 0.5s, visibility 0.5s;
-        }
-
-        #lightdarktoggle {
-            height: 35px;
-            width: 50px;
-            padding-top: 5px;
-            border-radius: 20px;
-            border-style: outset;
-            cursor: pointer;
-            float: right;
-        }
-
-        #buttonImage {
-            width: 20px;
-            height: 20px;
-        }
-
-        #z125Image {
-            border-radius: 10px;
-            border-style: double;
-            border-width: 5px;
-        }
-
-        #bikeCaption {
-            border-radius: 10px;
-            text-shadow: 0px 0px 10px #111;
-        }
-    </style>
+    <title>bry400</title>
+    <meta name="description" content="Bryson's corner of the internet: films, photos, music and apps.">
+    <link rel="icon" href="assets/clipdeck.png">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Apply the saved theme before first paint to avoid a flash.
+        try { document.documentElement.dataset.theme = localStorage.getItem("theme") || "midnight"; } catch (e) {}
+    </script>
 </head>
 
-<body class="light-mode">
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <a class="brand" href="#home"><span class="logo">b</span> bry400</a>
+            <nav class="nav-list" id="nav">
+                <a class="nav" href="#home" data-view="home"><span class="ico">⌂</span><span class="lbl">Home</span></a>
+                <a class="nav" href="#films" data-view="films"><span class="ico">▶</span><span class="lbl">Films</span><span class="badge" id="n-films"></span></a>
+                <a class="nav" href="#photos" data-view="photos"><span class="ico">◩</span><span class="lbl">Photos</span><span class="badge" id="n-photos"></span></a>
+                <a class="nav" href="#music" data-view="music"><span class="ico">♪</span><span class="lbl">Music</span><span class="badge" id="n-music"></span></a>
+                <a class="nav" href="#apps" data-view="apps"><span class="ico">⬇</span><span class="lbl">Apps</span></a>
+                <a class="nav" href="#about" data-view="about"><span class="ico">☺</span><span class="lbl">About</span></a>
+            </nav>
+            <div class="sidebar-foot">
+                <label class="small muted" for="theme">Theme</label>
+                <select id="theme">
+                    <option value="midnight">Midnight</option>
+                    <option value="mono">Mono</option>
+                    <option value="ember">Ember</option>
+                    <option value="light">Light</option>
+                    <option value="sakura">Sakura</option>
+                </select>
+            </div>
+        </aside>
 
-    <div class="container">
-        <button id="lightdarktoggle">
-            <img id="buttonImage" src="resources/sun.png">
-        </button>
-        <script>
-            const button = document.getElementById('lightdarktoggle');
-            const body = document.body;
-            const icon = button.querySelector('img')
+        <main class="content" id="content" tabindex="-1">
+            <!-- HOME -->
+            <section class="view" id="view-home">
+                <div class="hero">
+                    <div class="hero-text">
+                        <p class="eyebrow">Hey, I'm Bryson</p>
+                        <h1>I go by <span class="accent">bry400</span>.</h1>
+                        <p class="lead">Bry for my name, 400 because I ride a Ninja 400. Math major, mod maker, and
+                            someone who films, shoots and produces a bit too much. This is where it all lives.</p>
+                        <div class="row">
+                            <a class="btn primary" href="#films">Watch my films</a>
+                            <a class="btn" href="#apps">Get ClipDeck</a>
+                        </div>
+                    </div>
+                    <figure class="hero-photo">
+                        <img src="media/photos/kermit-z125.jpeg" alt="Bry on his Z125">
+                        <figcaption>Kermit, my Z125</figcaption>
+                    </figure>
+                </div>
 
-            button.addEventListener('click', function () {
-                body.classList.toggle('dark-mode');
-                body.classList.toggle('light-mode');
-                icon.src = body.classList.contains('dark-mode') ? 'resources/brightness.png' : 'resources/sun.png';
-            });
-        </script>
-        <h1>Welcome to the Brysite</h1>
-        <figure style="float: right; margin-right: 10px; text-align: center;">
-            <img id="z125Image" src="resources/02D36884-190D-4CD2-B23B-68238A5731B1_1_105_c.jpeg" alt="Bry on z125"
-                style="width: 200px;">
-            <figcaption id="bikeCaption">My z125, Kermit</figcaption>
-        </figure>
+                <h2 class="section-title">Jump in</h2>
+                <div class="tiles">
+                    <a class="tile" href="#films"><span class="tile-ico">▶</span><b>Films</b><span class="muted">Videos I've made</span></a>
+                    <a class="tile" href="#photos"><span class="tile-ico">◩</span><b>Photos</b><span class="muted">Bikes, places, things</span></a>
+                    <a class="tile" href="#music"><span class="tile-ico">♪</span><b>Music</b><span class="muted">Songs I've produced</span></a>
+                    <a class="tile" href="#apps"><span class="tile-ico">⬇</span><b>Apps</b><span class="muted">ClipDeck and more</span></a>
+                </div>
 
+                <div id="latest" hidden>
+                    <h2 class="section-title">Latest photos</h2>
+                    <div class="photo-grid" id="latest-grid"></div>
+                </div>
+            </section>
 
-        <p>My name is Bryson Ellalasingham. I go by bry400. Bry for my name and 400 cause I own
-            <span class="image-container">
-                <a><b>this</b></a>
-                <img src="resources/89C44326-C04C-4F18-B2B7-C55844805157_4_5005_c.jpeg" alt="Ninja 400">
-            </span> bike (Ninja 400).
-            You can see my <a href="#hobbies" style="text-decoration: none;"><b>hobbies</b></a>, maybe we share some.
-        </p>
+            <!-- FILMS -->
+            <section class="view" id="view-films" hidden>
+                <header class="view-head"><h1>Films</h1><p class="muted">Things I've shot and edited.</p></header>
+                <div class="card-grid" id="films-grid"></div>
+                <div class="empty" id="films-empty" hidden></div>
+            </section>
+
+            <!-- PHOTOS -->
+            <section class="view" id="view-photos" hidden>
+                <header class="view-head"><h1>Photos</h1><p class="muted">Click one to open it.</p></header>
+                <div class="photo-grid" id="photos-grid"></div>
+                <div class="empty" id="photos-empty" hidden></div>
+            </section>
+
+            <!-- MUSIC -->
+            <section class="view" id="view-music" hidden>
+                <header class="view-head"><h1>Music</h1><p class="muted">Songs I've made.</p></header>
+                <ol class="tracks" id="tracks"></ol>
+                <div class="empty" id="music-empty" hidden></div>
+            </section>
+
+            <!-- APPS -->
+            <section class="view" id="view-apps" hidden>
+                <header class="view-head"><h1>Apps</h1><p class="muted">Things I've built.</p></header>
+                <div id="apps-list"></div>
+                <h2 class="section-title">Also: Geometry Dash mod</h2>
+                <div class="panel row-between">
+                    <div>
+                        <b>No Block Glow</b>
+                        <p class="muted small">A Geode mod with around 10k downloads.</p>
+                    </div>
+                    <a class="btn" href="https://geode-sdk.org/mods/bry400.no_block_glow" target="_blank" rel="noopener">View on Geode ↗</a>
+                </div>
+            </section>
+
+            <!-- ABOUT -->
+            <section class="view" id="view-about" hidden>
+                <header class="view-head"><h1>About</h1></header>
+                <div class="about-grid">
+                    <div class="panel">
+                        <h2>Motorcycling</h2>
+                        <p>I got into motorcycling in summer 2024. I wanted a bike for my birthday but my dad warned me
+                            against it. Midway through the summer my mom encouraged me to go get one and learn. They
+                            bought me a Kawasaki Z125 as my first bike. Thanks mom and dad. Then I realized I needed
+                            more power, so I bought my Ninja 400, and I love it.</p>
+                        <img class="inline-photo" src="media/photos/ninja-400.jpeg" alt="Ninja 400" loading="lazy">
+                    </div>
+                    <div class="panel">
+                        <h2>Geometry Dash</h2>
+                        <p>3000+ hours and I'm proud. I made a <a href="https://geode-sdk.org/mods/bry400.no_block_glow" target="_blank" rel="noopener">mod</a>
+                            for it with the Geode mod loader. Around 10k people have downloaded it.</p>
+                    </div>
+                    <div class="panel">
+                        <h2>Programming</h2>
+                        <p>I used to study software engineering, then realized what started as a hobby was becoming a
+                            chore, so now I'm a math major. I think I'm on attempt 4 at a degree... I also made a
+                            Discord gambling bot (fake money, don't worry) with levelable skills and leaderboards. It's
+                            only on my server and down half the time, lol.</p>
+                    </div>
+                    <div class="panel">
+                        <h2>Videography, photos &amp; music</h2>
+                        <p>The stuff that fills the Films, Photos and Music pages here.</p>
+                    </div>
+                </div>
+
+                <h2 class="section-title">Contact</h2>
+                <div class="panel">
+                    <p>Add me on Discord: <b>bry400</b>. Also see my <a href="https://github.com/kazido" target="_blank" rel="noopener">GitHub</a>.</p>
+                </div>
+            </section>
+        </main>
     </div>
 
-    <div>
-        <div id="hobbies">
-            <h3>My Hobbies</h3>
-            <ul>
-                <li>Motorcycling
-                    <p>I got into motorcycling summer of 2024. I wanted to get a motorcycle for my birthday, but my dad
-                        warned me against it. However, midway through the summer, my mom encouraged me to just go out
-                        and get a bike and learn.<br>They bought me a Kawasaki z125 for my first ever bike. Thanks mom and dad.
-                        Then I realized I need more power, which is when I decided to buy my Ninja 400. I love my Ninja 400.
-                    </p>
-                </li>
-                <li>Geometry Dash
-                    <p> I love this game with my entire heart and soul. 3000+ hours and I am proud.</p>
-                    <p> I actually made a <a href="https://geode-sdk.org/mods/bry400.no_block_glow">mod</a>
-                        for the game. It uses the Geode mod loader. Around 10k people have downloaded and used it which I am very proud of.</p>
-                </li>
-                <li>Programming
-                    <p>I used to study software engineering in college. Then I realized what I started as a hobby was becoming a chore, so now I'm a math major. 
-                        I think I'm on attempt 4 at a degree...
-                        I made a discord bot. It's a gambling bot (fake money don't worry) which features some levelable
-                        skills and leaderboards. It's currently only available on my discord server and it's down half
-                        of the time LOL. Hopefully I can make it public some day.
-                    </p>
-                </li>
-                <li>Videography</li>
-                <li>Photography
-                    <p>Maybe some day I'll add some of my photos and videos here.</p>
-                </li>
-                <li>Music Production</li>
-            </ul>
-        </div>
+    <!-- Persistent music player -->
+    <div class="player" id="player" hidden>
+        <button class="pbtn" id="p-prev" aria-label="Previous">⏮</button>
+        <button class="pbtn big" id="p-toggle" aria-label="Play or pause">▶</button>
+        <button class="pbtn" id="p-next" aria-label="Next">⏭</button>
+        <div class="p-info"><b id="p-title">—</b></div>
+        <span class="small muted" id="p-cur">0:00</span>
+        <input type="range" id="p-seek" min="0" max="1000" value="0" aria-label="Seek">
+        <span class="small muted" id="p-dur">0:00</span>
+        <audio id="audio" preload="none"></audio>
+    </div>
 
-        <div id="Contact">
-            <h4>Contact</h4>
-            <p>If you want to get in contact with me, you can add me on discord. My username is bry400.
-                <br> Feel free to check out my <a href="https://github.com/kazido"
-                    style="text-decoration: none;"><b>Github</b></a> page.
-            </p>
-        </div>
+    <!-- Lightbox for photos and films -->
+    <div class="lightbox" id="lightbox" hidden>
+        <button class="lb-close" id="lb-close" aria-label="Close">✕</button>
+        <button class="lb-nav prev" id="lb-prev" aria-label="Previous">‹</button>
+        <div class="lb-stage" id="lb-stage"></div>
+        <button class="lb-nav next" id="lb-next" aria-label="Next">›</button>
+        <div class="lb-cap" id="lb-cap"></div>
+    </div>
 
+    <script src="app.js"></script>
 </body>
 
 </html>
