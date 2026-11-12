@@ -1,21 +1,15 @@
 # brysite
 
-Static site for bry400.com (GitHub Pages). No build step.
+The personal site of Bryson Ellalasingham (bry400): [bry400.com](https://www.bry400.com)
 
-## Adding content
+Films, photos and music I've made, plus downloads for the apps I build, including
+[ClipDeck](https://github.com/kazido/ClipDeck), a local clip manager for OBS replays.
 
-1. Drop files in:
-   - `media/films/` (.mp4, .webm)
-   - `media/photos/` (.jpg, .png, .webp)
-   - `media/music/` (.mp3, .wav, .m4a)
-   - `downloads/` (installers: .exe, .msi, .zip)
-2. Run `node scripts/update-media.mjs` (rebuilds `media.json`).
-3. Commit and push.
+## How it's built
 
-Titles come from filenames. Override them, add descriptions, or link a YouTube film in `media/meta.json`.
+A plain static site: HTML, CSS and a little JavaScript, hosted on GitHub Pages. No framework and no
+build step. The media lists are generated from the files in `media/` by a small script and a GitHub Action.
 
-## Limits
+## License
 
-GitHub blocks files over 100 MB and the repo gets heavy fast. For long films, upload to YouTube and add
-`{ "type": "films", "title": "...", "youtube": "<video id>" }` under `links` in `media/meta.json`.
-For big installers, use a GitHub Release and set `app.releaseUrl` in `media/meta.json`.
+See [LICENSE](LICENSE).
