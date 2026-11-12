@@ -1,6 +1,12 @@
 {
-  "photos/kermit-z125.jpeg": { "title": "Kermit, my Z125", "description": "My first bike." },
-  "photos/ninja-400.jpeg": { "title": "Ninja 400", "description": "The bike I actually love." },
+  "photos/kermit-z125.jpeg": {
+    "title": "Kermit, my Z125",
+    "description": "My first bike."
+  },
+  "photos/ninja-400.jpeg": {
+    "title": "Ninja 400",
+    "description": "The bike I actually love."
+  },
   "app": {
     "name": "ClipDeck",
     "tagline": "A local clip manager for your OBS replays. Fast library, built-in player, trimming, game sorting. No cloud, no account.",
@@ -8,8 +14,12 @@
     "platform": "Windows 10/11 (64-bit)",
     "releaseUrl": "https://github.com/kazido/ClipDeck/releases/latest",
     "downloads": [
-      { "label": "Download installer (.exe)", "url": "https://github.com/kazido/ClipDeck/releases/latest/download/ClipDeck-setup.exe", "size": 92144095, "primary": true },
-      { "label": "MSI package", "url": "https://github.com/kazido/ClipDeck/releases/latest/download/ClipDeck-installer.msi", "size": 45985792 }
+      {
+        "label": "Download installer (.exe)",
+        "url": "https://github.com/kazido/ClipDeck/releases/latest/download/ClipDeck-setup.exe",
+        "size": 92144095,
+        "primary": true
+      }
     ]
   }
 }
