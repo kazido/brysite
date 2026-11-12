@@ -1,20 +1,32 @@
 {
-  "generated": "2026-11-12T11:16:48.771Z",
+  "generated": "2026-11-12T11:22:17.693Z",
   "films": [],
   "photos": [
-    {
-      "path": "media/photos/kermit-z125.jpeg",
-      "title": "Kermit, my Z125",
-      "size": 447311,
-      "date": "2026-11-12T11:16:44.894Z",
-      "description": "My first bike."
-    },
     {
       "path": "media/photos/ninja-400.jpeg",
       "title": "Ninja 400",
       "size": 88100,
-      "date": "2026-11-12T11:16:44.894Z",
+      "date": "2026-11-12T11:22:13.251Z",
       "description": "The bike I actually love."
+    },
+    {
+      "path": "media/photos/IMG_7775.jpeg",
+      "title": "IMG 7775",
+      "size": 3819758,
+      "date": "2026-11-12T11:22:13.250Z"
+    },
+    {
+      "path": "media/photos/kermit-z125.jpeg",
+      "title": "Kermit, my Z125",
+      "size": 447311,
+      "date": "2026-11-12T11:22:13.250Z",
+      "description": "My first bike."
+    },
+    {
+      "path": "media/photos/IMG_1625.jpeg",
+      "title": "IMG 1625",
+      "size": 9808189,
+      "date": "2026-11-12T11:22:13.233Z"
     }
   ],
   "music": [
@@ -22,37 +34,37 @@
       "path": "media/music/sad ethereal.mp3",
       "title": "Sad Ethereal",
       "size": 2112782,
-      "date": "2026-11-12T11:16:44.893Z"
+      "date": "2026-11-12T11:22:13.203Z"
     },
     {
       "path": "media/music/pressure.mp3",
       "title": "Pressure",
       "size": 2992586,
-      "date": "2026-11-12T11:16:44.884Z"
+      "date": "2026-11-12T11:22:13.194Z"
     },
     {
       "path": "media/music/digicore.mp3",
       "title": "Digicore",
       "size": 3162905,
-      "date": "2026-11-12T11:16:44.871Z"
+      "date": "2026-11-12T11:22:13.182Z"
     },
     {
       "path": "media/music/Turbulence.mp3",
       "title": "Turbulence",
       "size": 2766888,
-      "date": "2026-11-12T11:16:44.858Z"
+      "date": "2026-11-12T11:22:13.169Z"
     },
     {
       "path": "media/music/Shatter.mp3",
       "title": "Shatter",
       "size": 7085816,
-      "date": "2026-11-12T11:16:44.846Z"
+      "date": "2026-11-12T11:22:13.157Z"
     },
     {
       "path": "media/music/Outrosong.wav",
       "title": "Outrosong",
       "size": 9925108,
-      "date": "2026-11-12T11:16:44.816Z"
+      "date": "2026-11-12T11:22:13.128Z"
     }
   ],
   "downloads": [],
